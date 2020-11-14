@@ -1,0 +1,7 @@
+train: /home/user/data1/patrick/Datasets/VisDrone4Yolo/images/train_dt
+val: /home/user/data1/patrick/Datasets/VisDrone4Yolo/images/val
+
+nc: 9
+
+names: ['people','bicycle','motor','bus','car','van',
+        'truck','tricycle','awning-tricycle']

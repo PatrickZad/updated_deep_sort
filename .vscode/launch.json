@@ -1,0 +1,31 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "train_yolov4",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/train_yolo4.py",
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONPATH":"${workspaceFolder}",
+                "CUDA_VISIBLE_DEVICES":"6"
+            },
+            "args": [
+                "--cfg","${workspaceFolder}/detector/YOLOv4/models/yolov4x-mish-drone-dt.yaml",
+                "--data","${workspaceFolder}/detector/YOLOv4/data/visdrone_dt.yaml",
+                "--epochs","1600",
+                "--batch-size","16",
+                "--img-size","672",
+                "--rect",
+                "--resume", "${workspaceFolder}/detector/YOLOv4/weights/yolov4x-mish.pt",
+                "--multi-scale",
+                "--name","train_visdrone_dt",
+                "--local_rank","-1"
+            ]
+        }
+    ]
+}
